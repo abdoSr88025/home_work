@@ -137,12 +137,12 @@ void main() {
     Rectangle(10, 5),
     Circle(4),
     Triangle(6, 8),
-    Rectangle(-2, 5), // هيتطبع Error ويتم التعديل
+    Rectangle(-2, 5),
   ];
 
   double totalArea = 0.0;
   for (var shape in shapes) {
-    totalArea += shape.area(); // Polymorphism هنا 👌
+    totalArea += shape.area();
   }
 
   double totalCost = computeCost(totalArea);

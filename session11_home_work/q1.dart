@@ -40,7 +40,6 @@ class Vehicle {
     }
   }
 
-  // ---- methods ----
   double computeFuelNeeded(double distance) {
     return distance / _fuelEfficiency;
   }
@@ -58,7 +57,6 @@ class Vehicle {
       "Vehicle(capacity: $_fuelCapacity L, efficiency: $_fuelEfficiency km/L)";
 }
 
-// ---------------- Car ----------------
 class Car extends Vehicle {
   int _passengerCount = 1;
 
@@ -72,7 +70,7 @@ class Car extends Vehicle {
     if (value >= 1) {
       _passengerCount = value;
     } else {
-      print("❌ passengerCount must be >= 1 (kept previous: $_passengerCount)");
+      print(" passengerCount must be >= 1 (kept previous: $_passengerCount)");
     }
   }
 
