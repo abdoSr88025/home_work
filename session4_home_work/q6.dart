@@ -6,7 +6,7 @@ greater than or equal to 40.
 */
 void main() {
   List<int>? numbers = [20, 15, 13];
-  if (numbers == null || numbers.isEmpty) {
+  if (numbers.isEmpty) {
     print('No scores');
   } else {
     int sum = numbers.first + numbers.last;

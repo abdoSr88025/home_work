@@ -15,7 +15,7 @@ void main() {
 
     case '/products':
       List<String>? products = ['Laptop', 'Phone', 'Tablet'];
-      if (products == null || products.isEmpty) {
+      if (products.isEmpty) {
         print('No products');
       } else {
         print('products page ');
