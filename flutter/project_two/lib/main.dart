@@ -101,8 +101,8 @@ class HomePage extends StatelessWidget {
                   buildStats(
                     iconColor: Color(0xff2496F1),
                     icon: Icons.arrow_circle_up,
-                    title: "1,234",
-                    subtitle: "Users",
+                    title: "98%",
+                    subtitle: "Success",
                   ),
                 ],
               ),
