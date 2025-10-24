@@ -16,15 +16,43 @@ class Homepage extends StatelessWidget {
           children: [
             CustomAppBar(),
             SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                spacing: 16,
-                children: [
-                  GenderSelectionSection(),
-                  HeightSelectionItem(),
-                  WeightAgeSection(),
-                ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  spacing: 20,
+                  children: [
+                    GenderSelectionSection(),
+                    HeightSelectionItem(),
+                    WeightAgeSection(),
+                    SizedBox(height: 16),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xffF72585),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 60,
+                            vertical: 20,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          elevation: 4,
+                        ),
+                        child: Text(
+                          'CALCULATE',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
