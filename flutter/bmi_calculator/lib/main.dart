@@ -1,22 +1,15 @@
-import 'package:bmi_calculator/main_page.dart';
+import 'package:bmi_calculator/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BmiCalculatorApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BmiCalculatorApp extends StatelessWidget {
+  const BmiCalculatorApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'BMI Calculator',
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xFF0A0E21),
-        scaffoldBackgroundColor: Color(0xFF0A0E21),
-      ),
-      home: MainPage(),
-    );
+    return MaterialApp(home: Homepage());
   }
 }
