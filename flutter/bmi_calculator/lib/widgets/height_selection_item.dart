@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/widgets/custom_container.dart';
 import 'package:bmi_calculator/widgets/title_section.dart';
+import 'package:bmi_calculator/widgets/value_text.dart';
 import 'package:flutter/material.dart';
 
 class HeightSelectionItem extends StatefulWidget {
@@ -22,14 +23,7 @@ class _HeightSelectionItemState extends State<HeightSelectionItem> {
             textBaseline: TextBaseline.alphabetic,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                height.round().toString(),
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              ValueText(text: height.round().toString()),
               Text('cm', style: TextStyle(color: Colors.grey, fontSize: 18)),
             ],
           ),

@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/widgets/custom_app_bar.dart';
 import 'package:bmi_calculator/widgets/gender_selection_section.dart';
 import 'package:bmi_calculator/widgets/height_selection_item.dart';
+import 'package:bmi_calculator/widgets/weight_age_section.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget {
@@ -19,7 +20,11 @@ class Homepage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 spacing: 16,
-                children: [GenderSelectionSection(), HeightSelectionItem()],
+                children: [
+                  GenderSelectionSection(),
+                  HeightSelectionItem(),
+                  WeightAgeSection(),
+                ],
               ),
             ),
           ],
