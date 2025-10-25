@@ -1,9 +1,10 @@
+import 'package:bmi_calculator/models/bmi_inputs_model.dart';
 import 'package:bmi_calculator/widgets/gender_item.dart';
 import 'package:flutter/material.dart';
 
 class GenderSelectionSection extends StatefulWidget {
-  const GenderSelectionSection({super.key});
-
+  const GenderSelectionSection({super.key, required this.bmiInputsModel});
+  final BmiInputsModel bmiInputsModel;
   @override
   State<GenderSelectionSection> createState() => _GenderSelectionSectionState();
 }
@@ -20,6 +21,7 @@ class _GenderSelectionSectionState extends State<GenderSelectionSection> {
           child: GestureDetector(
             onTap: () {
               isMaleSelected = true;
+              widget.bmiInputsModel.gender = 'Male';
               setState(() {});
             },
             child: GenderItem(
@@ -34,6 +36,7 @@ class _GenderSelectionSectionState extends State<GenderSelectionSection> {
           child: GestureDetector(
             onTap: () {
               isMaleSelected = false;
+              widget.bmiInputsModel.gender = 'Female';
               setState(() {});
             },
             child: GenderItem(

@@ -1,11 +1,12 @@
+import 'package:bmi_calculator/models/bmi_inputs_model.dart';
 import 'package:bmi_calculator/widgets/custom_container.dart';
 import 'package:bmi_calculator/widgets/title_section.dart';
 import 'package:bmi_calculator/widgets/value_text.dart';
 import 'package:flutter/material.dart';
 
 class HeightSelectionItem extends StatefulWidget {
-  const HeightSelectionItem({super.key});
-
+  const HeightSelectionItem({super.key, required this.bmiInputsModel});
+  final BmiInputsModel bmiInputsModel;
   @override
   State<HeightSelectionItem> createState() => _HeightSelectionItemState();
 }
@@ -16,6 +17,7 @@ class _HeightSelectionItemState extends State<HeightSelectionItem> {
   Widget build(BuildContext context) {
     return CustomContainer(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TitleSection(label: 'HEIGHT'),
           Row(
@@ -36,10 +38,11 @@ class _HeightSelectionItemState extends State<HeightSelectionItem> {
               value: height,
               onChanged: (value) {
                 height = value;
+                widget.bmiInputsModel.height = value;
                 setState(() {});
               },
-              min: 100,
-              max: 200,
+              min: 120,
+              max: 220,
               activeColor: Colors.white,
               inactiveColor: Color(0xff8F919E),
               thumbColor: Color(0xffEC0D54),

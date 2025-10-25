@@ -17,6 +17,7 @@ class GenderItem extends StatelessWidget {
     return CustomContainer(
       color: color,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(icon, color: Colors.white, size: 120),
           TitleSection(label: data),

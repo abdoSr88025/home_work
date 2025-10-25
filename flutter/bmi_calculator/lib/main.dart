@@ -10,6 +10,6 @@ class BmiCalculatorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Homepage());
+    return MaterialApp(home: Homepage(), debugShowCheckedModeBanner: false);
   }
 }

@@ -1,12 +1,20 @@
+import 'package:bmi_calculator/models/bmi_inputs_model.dart';
 import 'package:bmi_calculator/widgets/custom_app_bar.dart';
 import 'package:bmi_calculator/widgets/gender_selection_section.dart';
 import 'package:bmi_calculator/widgets/height_selection_item.dart';
+import 'package:bmi_calculator/widgets/result_screen.dart';
 import 'package:bmi_calculator/widgets/weight_age_section.dart';
 import 'package:flutter/material.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  BmiInputsModel bmiInputsModel = BmiInputsModel();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,16 +30,36 @@ class Homepage extends StatelessWidget {
                 child: Column(
                   spacing: 20,
                   children: [
-                    GenderSelectionSection(),
-                    HeightSelectionItem(),
-                    WeightAgeSection(),
+                    Expanded(
+                      child: GenderSelectionSection(
+                        bmiInputsModel: bmiInputsModel,
+                      ),
+                    ),
+                    Expanded(
+                      child: HeightSelectionItem(
+                        bmiInputsModel: bmiInputsModel,
+                      ),
+                    ),
+                    Expanded(
+                      child: WeightAgeSection(bmiInputsModel: bmiInputsModel),
+                    ),
                     SizedBox(height: 16),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          double bmiResult = bmiInputsModel.calculateBmi();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return ResultScreen(bmiResult: bmiResult);
+                              },
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffF72585),
+                          backgroundColor: Color(0xffF72595),
                           padding: EdgeInsets.symmetric(
                             horizontal: 60,
                             vertical: 20,

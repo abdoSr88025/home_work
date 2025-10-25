@@ -8,10 +8,11 @@ class CounterCard extends StatefulWidget {
     super.key,
     required this.text,
     required this.defaultValue,
+    required this.onChanged,
   });
   final String text;
   final int defaultValue;
-
+  final Function(int) onChanged;
   @override
   State<CounterCard> createState() => _CounterCardState();
 }
@@ -35,6 +36,7 @@ class _CounterCardState extends State<CounterCard> {
                 icon: Icons.remove,
                 onTap: () {
                   value--;
+                  widget.onChanged(value);
                   setState(() {});
                 },
               ),
@@ -43,6 +45,7 @@ class _CounterCardState extends State<CounterCard> {
                 icon: Icons.add,
                 onTap: () {
                   value++;
+                  widget.onChanged(value);
                   setState(() {});
                 },
               ),
