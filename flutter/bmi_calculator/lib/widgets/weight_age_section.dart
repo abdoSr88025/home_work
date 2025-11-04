@@ -7,30 +7,28 @@ class WeightAgeSection extends StatelessWidget {
   final BmiInputsModel bmiInputsModel;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        children: [
-          Expanded(
-            child: CounterCard(
-              text: 'WEIGHT',
-              defaultValue: 80,
-              onChanged: (value) {
-                bmiInputsModel.weight = value;
-              },
-            ),
+    return Row(
+      children: [
+        Expanded(
+          child: CounterCard(
+            text: 'WEIGHT',
+            defaultValue: 80,
+            onChanged: (value) {
+              bmiInputsModel.weight = value;
+            },
           ),
-          SizedBox(width: 24),
-          Expanded(
-            child: CounterCard(
-              text: 'AGE',
-              defaultValue: 30,
-              onChanged: (value) {
-                bmiInputsModel.age = value;
-              },
-            ),
+        ),
+        SizedBox(width: 24),
+        Expanded(
+          child: CounterCard(
+            text: 'AGE',
+            defaultValue: 30,
+            onChanged: (value) {
+              bmiInputsModel.age = value;
+            },
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
