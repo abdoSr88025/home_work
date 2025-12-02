@@ -30,7 +30,7 @@ class ResultScreen extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              '${bmiResult.toStringAsFixed(1)}',
+              bmiResult.toStringAsFixed(1),
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,

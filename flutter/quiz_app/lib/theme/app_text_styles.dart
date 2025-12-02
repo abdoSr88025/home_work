@@ -1,34 +1,66 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
 
-class AppTextStyles {
-  static const TextStyle appBarTitle = TextStyle(
-    color: Colors.white,
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
+abstract class AppTextStyles {
+  static TextStyle regular24({Color? color}) => TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w400,
+
+    color: color ?? Colors.white,
   );
 
-  static const TextStyle heading = TextStyle(
-    color: AppColors.textPrimary,
-    fontSize: 22,
-    fontWeight: FontWeight.w700,
-  );
-
-  static const TextStyle subheading = TextStyle(
-    color: AppColors.textSecondary,
-    fontSize: 14,
+  static TextStyle medium24({Color? color}) => TextStyle(
+    fontSize: 24,
     fontWeight: FontWeight.w500,
+
+    color: color ?? Colors.white,
   );
 
-  static const TextStyle question = TextStyle(
-    color: AppColors.textPrimary,
+  static TextStyle regular18({Color? color}) => TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+
+    color: color ?? Colors.white,
+  );
+
+  static TextStyle medium18({Color? color}) => TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+
+    color: color ?? Colors.white,
+  );
+
+  static TextStyle bold20({Color? color}) => TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w700,
+
+    color: color ?? Colors.white,
   );
 
-  static const TextStyle option = TextStyle(
-    color: AppColors.textPrimary,
+  static TextStyle regular16({Color? color}) => TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+
+    color: color ?? Colors.white,
+  );
+
+  static TextStyle medium16({Color? color}) => TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
+
+    color: color ?? Colors.white,
+  );
+
+  static TextStyle regular12({Color? color}) => TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+
+    color: color ?? Colors.white,
+  );
+
+  static TextStyle medium12({Color? color}) => TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+
+    color: color ?? Colors.white,
   );
 }
